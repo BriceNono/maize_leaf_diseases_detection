@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Maize Leaf Disease Detection</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+}
+
+.container{
+margin-top:50px;
+}
+
+button{
+padding:10px 20px;
+background:green;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+img{
+margin-top:20px;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🌽 Maize Leaf Disease Detection</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="file" name="file" required>
+
+<br><br>
+
+<button type="submit">Predict Disease</button>
+
+</form>
+
+{% if prediction %}
+
+<h2>Disease: {{prediction}}</h2>
+
+<h3>Confidence: {{confidence}}%</h3>
+
+<img src="{{image}}" width="300">
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
